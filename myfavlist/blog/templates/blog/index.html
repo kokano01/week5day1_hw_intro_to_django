@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h1>My 5 favorite songs on Spotify</h1>
+    {% for t in mytop %}
+        {% if t.artist == "tobi lou" %}
+            <h6>Yo yo yo, you're listening to Tobi Lou AKA Lil Baby Bop</h6>
+        {% endif %}
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ t.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ t.artist }}</h6>
+                <p class="card-text">{{ t.year }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
